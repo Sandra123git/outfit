@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GETS — Exclusive Girls Western Outfit</title>
+<meta name="description" content="GETS — Exclusive Girls Western Outfit. Since 2004.">
+
+<!-- Fonts: Plus Jakarta Sans (body/UI) + Clash Display (headings) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap" rel="stylesheet">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+
+<style>
+/* ==========================================================================
+   GETS — Design Tokens
+   ========================================================================== */
+:root{
+  --bg:            #0a0b0d;
+  --bg-soft:       #101318;
+  --ink:           #f4f5f2;
+  --ink-muted:     #9aa0a6;
+  --line:          rgba(255,255,255,.09);
+  --glass:         rgba(255,255,255,.045);
+  --glass-strong:  rgba(255,255,255,.08);
+
+
+  --green:      #fa34b8;
+  --green-soft: rgba(79,124,255,.18);
+
+  --orange:      #ecd611;;
+  --orange-soft: rgba(155,92,255,.18);
+
+  --grad-cta:#fa34b8;
+
+
+  --font-display:  'Clash Display', 'Plus Jakarta Sans', sans-serif;
+  --font-body:     'Plus Jakarta Sans', 'Inter', sans-serif;
+
+  --radius-lg: 26px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+
+  --ease: cubic-bezier(.22,1,.36,1);
+}
+
+*{ box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family:var(--font-display);
+  letter-spacing:-0.02em;
+  margin:0;
+}
+
+p{ margin:0; }
+a{ text-decoration:none; color:inherit; }
+img{ max-width:100%; display:block; }
+
+.container-xxl{ max-width:1320px; padding-inline:20px; }
+
+.text-gradient{
+  background:var(--grad-cta);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--green);
+  background:var(--green-soft);
+  border:1px solid rgba(124,184,55,.35);
+  padding:6px 14px;
+  border-radius:999px;
+}
+
+@media(prefers-reduced-motion: reduce){
+  *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+}
+
+/* ==========================================================================
+   ANNOUNCEMENT BAR
+   ========================================================================== */
+.announce-bar{
+  background:linear-gradient(90deg, #12140f, #16130d);
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+  white-space:nowrap;
+  padding:9px 0;
+}
+.announce-track{
+  display:inline-flex;
+  gap:56px;
+  animation:marquee 22s linear infinite;
+  font-size:.78rem;
+  font-weight:600;
+  letter-spacing:.03em;
+  color:#e7e6df;
+}
+.announce-track span{ display:inline-flex; align-items:center; gap:8px; }
+.announce-track i{ color:var(--orange); }
+@keyframes marquee{
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
+}
+
+/* ==========================================================================
+   HEADER — floating glass, borderless
+   ========================================================================== */
+.site-header{
+  position:sticky; top:0; z-index:1000;
+  padding:14px 0;
+}
+.header-inner{
+  display:flex; align-items:center; justify-content:space-between; gap:18px;
+  background:rgba(16,18,22,.55);
+  backdrop-filter:blur(18px) saturate(140%);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:10px 18px 10px 22px;
+  position:relative;
+}
+.header-inner::before{
+  content:"";
+  position:absolute; inset:0;
+  border-radius:999px;
+  padding:1px;
+  background:linear-gradient(120deg, rgba(124,184,55,.5), transparent 30%, transparent 70%, rgba(225,119,7,.5));
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
+  opacity:.6;
+}
+
+.brand{ display:flex; flex-direction:column; line-height:1; flex-shrink:0; }
+.brand-mark{
+  font-family:var(--font-display);
+  font-size:1.35rem;
+  font-weight:700;
+  letter-spacing:.04em;
+}
+.brand-mark.small{ font-size:1.1rem; }
+.accent-dot{ color:var(--orange); }
+.brand-sub{
+  font-size:.62rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--ink-muted);
+  margin-top:2px;
+}
+
+.main-nav{ display:flex; gap:6px; }
+.main-nav a{
+  font-size:.88rem; font-weight:600; color:var(--ink-muted);
+  padding:9px 16px; border-radius:999px;
+  transition:color .25s var(--ease), background .25s var(--ease);
+}
+.main-nav a:hover, .main-nav a.active-link{
+  color:var(--ink);
+  background:var(--glass-strong);
+}
+
+.header-actions{ display:flex; align-items:center; gap:6px; }
+.icon-btn{
+  width:40px; height:40px;
+  display:inline-flex; align-items:center; justify-content:center;
+  border-radius:50%;
+  background:transparent;
+  border:1px solid transparent;
+  color:var(--ink);
+  font-size:1.05rem;
+  cursor:pointer;
+  transition:background .25s var(--ease), border-color .25s var(--ease), transform .2s var(--ease);
+}
+.icon-btn:hover{ background:var(--glass-strong); border-color:var(--line); transform:translateY(-1px); }
+.cart-btn{ position:relative; }
+.cart-badge{
+  position:absolute; top:2px; right:2px;
+  background:var(--grad-cta);
+  color:#0a0b0d;
+  font-size:.62rem; font-weight:800;
+  min-width:17px; height:17px; padding:0 4px;
+  border-radius:999px;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 0 0 2px var(--bg);
+}
+
+/* Mobile offcanvas */
+.mobile-nav{
+  background:#0d0f13;
+  border-right:1px solid var(--line);
+  width:82vw; max-width:340px;
+}
+.mobile-nav .offcanvas-body{ display:flex; flex-direction:column; gap:4px; }
+.mobile-nav a{
+  font-family:var(--font-display);
+  font-size:1.4rem; font-weight:600;
+  padding:14px 4px;
+  border-bottom:1px solid var(--line);
+  color:var(--ink);
+}
+.mobile-nav-footer{ margin-top:24px; color:var(--ink-muted); font-size:.85rem; }
+.mobile-nav-footer p{ margin-bottom:6px; }
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.hero{
+  position:relative;
+  min-height:92vh;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  padding-top:40px;
+}
+.hero-video-wrap{
+  position:absolute; inset:0;
+  z-index:0;
+  overflow:hidden;
+  background:
+    radial-gradient(70% 60% at 75% 25%, rgba(124,184,55,.16), transparent 60%),
+    radial-gradient(60% 55% at 20% 85%, rgba(225,119,7,.14), transparent 60%),
+    var(--bg);
+}
+.hero-video{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.hero-vignette{
+  position:absolute; inset:0;
+  background:
+    radial-gradient(60% 55% at 78% 30%, rgba(124,184,55,.10), transparent 60%),
+    radial-gradient(55% 50% at 15% 80%, rgba(225,119,7,.10), transparent 60%);
+  z-index:1;
+  pointer-events:none;
+}
+
+.hero-inner{
+  position:relative; z-index:2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+}
+
+.hero-copy-center{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  max-width:760px;
+  margin:0 auto;
+}
+
+.hero-copy h1{
+  font-size:clamp(2.5rem, 6vw, 4.6rem);
+  font-weight:700;
+  margin-top:18px;
+  line-height:1.03;
+  text-shadow:0 4px 30px rgba(0,0,0,.45);
+}
+.hero-desc{
+  color:var(--ink-muted);
+  font-size:1.08rem;
+  max-width:520px;
+  margin-top:20px;
+}
+.hero .eyebrow{ margin-top:4px; }
+
+.cta-group{ display:flex; gap:14px; margin-top:32px; flex-wrap:wrap; justify-content:center; }
+
+.btn{
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:.92rem;
+  padding:14px 26px;
+  border-radius:999px;
+  display:inline-flex; align-items:center; gap:8px;
+  border:1px solid transparent;
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s var(--ease);
+}
+.btn-glow{
+  background:var(--grad-cta);
+  color:#0a0b0d;
+  box-shadow:0 8px 26px -8px rgba(124,184,55,.55);
+}
+.btn-glow:hover{ transform:translateY(-2px); box-shadow:0 14px 34px -10px rgba(225,119,7,.6); color:#0a0b0d; }
+.btn-ghost-glass{
+  background:var(--glass);
+  backdrop-filter:blur(10px);
+  border-color:var(--line);
+  color:var(--ink);
+}
+.btn-ghost-glass:hover{ background:var(--glass-strong); transform:translateY(-2px); color:var(--ink); }
+
+.hero-stats{ display:flex; gap:34px; margin-top:46px; justify-content:center; flex-wrap:wrap; }
+.hero-stats div{ display:flex; flex-direction:column; align-items:center; }
+.hero-stats strong{ font-family:var(--font-display); font-size:1.5rem; }
+.hero-stats strong i{ font-size:.9rem; color:var(--orange); margin-left:2px; }
+.hero-stats span{ font-size:.72rem; color:var(--ink-muted); text-transform:uppercase; letter-spacing:.08em; margin-top:4px; }
+
+/* ==========================================================================
+   TRUST STRIP
+   ========================================================================== */
+.trust-strip{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:26px 0; }
+.trust-grid{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:18px; }
+.trust-item{ display:flex; align-items:center; gap:10px; color:var(--ink-muted); font-size:.85rem; font-weight:600; }
+.trust-item i{ font-size:1.15rem; color:var(--green); }
+
+/* ==========================================================================
+   PRODUCTS
+   ========================================================================== */
+.products{ padding:110px 0 90px; }
+.section-head{ text-align:center; max-width:560px; margin:0 auto 56px; display:flex; flex-direction:column; align-items:center; gap:16px; }
+.section-head h2{ font-size:clamp(1.9rem, 3.4vw, 2.6rem); }
+.section-head p{ color:var(--ink-muted); }
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:26px;
+  perspective:1200px;
+}
+
+.product-card{
+  position:relative;
+  border-radius:var(--radius-lg);
+  background:var(--glass);
+  border:1px solid var(--line);
+  padding:14px;
+  overflow:hidden;
+  transform-style:preserve-3d;
+  transition:transform .12s linear, border-color .3s var(--ease), box-shadow .3s var(--ease);
+  will-change:transform;
+}
+.product-card::before{
+  content:"";
+  position:absolute; inset:0;
+  border-radius:inherit;
+  padding:1px;
+  background:linear-gradient(140deg, rgba(124,184,55,0), rgba(124,184,55,.55) var(--rx,50%), rgba(225,119,7,0));
+  opacity:0;
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor; mask-composite:exclude;
+  transition:opacity .3s var(--ease);
+  pointer-events:none;
+}
+.product-card:hover::before{ opacity:1; }
+.product-card:hover{
+  box-shadow:0 30px 50px -24px rgba(0,0,0,.65);
+  border-color:transparent;
+}
+
+.ripple{
+  position:absolute; inset:0;
+  border-radius:inherit;
+  background:radial-gradient(220px circle at var(--mx,50%) var(--my,50%), rgba(124,184,55,.22), transparent 60%);
+  opacity:0;
+  transition:opacity .35s var(--ease);
+  pointer-events:none;
+  z-index:1;
+}
+.product-card:hover .ripple{ opacity:1; }
+
+.product-media{
+  position:relative;
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  aspect-ratio:3/4;
+  background:#12141a;
+}
+.product-media img{
+  width:100%; height:100%; object-fit:cover;
+  transform:scale(1.02);
+  transition:transform .6s var(--ease);
+}
+.product-card:hover .product-media img{ transform:scale(1.1); }
+.product-badge{
+  position:absolute; top:10px; left:10px;
+  font-size:.62rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em;
+  padding:5px 10px; border-radius:999px;
+  background:rgba(10,11,13,.65);
+  backdrop-filter:blur(6px);
+  border:1px solid var(--line);
+  color:var(--green);
+}
+.product-wish{
+  position:absolute; top:10px; right:10px;
+  width:34px; height:34px; border-radius:50%;
+  background:rgba(10,11,13,.55);
+  border:1px solid var(--line);
+  backdrop-filter:blur(6px);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--ink);
+  transition:background .25s var(--ease), color .25s var(--ease), transform .25s var(--ease);
+}
+.product-wish:hover{ background:var(--orange); color:#0a0b0d; transform:scale(1.08); }
+
+.product-info{ padding:16px 8px 8px; position:relative; z-index:2; }
+.product-cat{ font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-muted); }
+.product-info h5{ font-size:1.02rem; font-weight:600; margin-top:6px; font-family:var(--font-body); }
+.product-price-row{ display:flex; align-items:center; justify-content:space-between; margin-top:12px; }
+.price{ font-family:var(--font-display); font-size:1.15rem; font-weight:700; }
+.price-old{ font-size:.8rem; color:var(--ink-muted); text-decoration:line-through; margin-left:6px; }
+.add-btn{
+  width:42px; height:42px; border-radius:50%;
+  background:var(--glass-strong);
+  border:1px solid var(--line);
+  color:var(--ink);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer;
+  transition:background .25s var(--ease), transform .25s var(--ease);
+}
+.add-btn:hover{ background:var(--grad-cta); color:#0a0b0d; transform:rotate(90deg); }
+
+/* ==========================================================================
+   CTA BAND
+   ========================================================================== */
+.cta-band{ padding:0 0 100px; }
+.cta-band-inner{
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  padding:44px;
+  display:flex; align-items:center; justify-content:space-between; gap:26px; flex-wrap:wrap;
+}
+.cta-band-inner h3{ font-size:1.6rem; }
+.cta-band-inner p{ color:var(--ink-muted); margin-top:6px; }
+.cta-form{ display:flex; gap:10px; flex-wrap:wrap; }
+.cta-form input{
+  background:var(--glass-strong);
+  border:1px solid var(--line);
+  color:var(--ink);
+  padding:14px 18px;
+  border-radius:999px;
+  min-width:240px;
+  font-family:var(--font-body);
+}
+.cta-form input:focus{ outline:2px solid var(--green); outline-offset:2px; }
+.cta-form input::placeholder{ color:var(--ink-muted); }
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer{ border-top:1px solid var(--line); padding:64px 0 0; }
+.footer-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:36px; padding-bottom:44px; }
+.footer-brand p{ color:var(--ink-muted); font-size:.86rem; margin-top:14px; max-width:280px; }
+.footer-social{ display:flex; gap:10px; margin-top:18px; }
+.footer-social a{
+  width:38px; height:38px; border-radius:50%;
+  border:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center;
+  transition:background .25s var(--ease), color .25s var(--ease);
+}
+.footer-social a:hover{ background:var(--green); color:#0a0b0d; }
+.footer-col h6{ font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-muted); margin-bottom:14px; }
+.footer-col a{ display:block; font-size:.9rem; color:var(--ink); padding:6px 0; opacity:.85; }
+.footer-col a:hover{ color:var(--green); opacity:1; }
+.footer-col .muted{ color:var(--ink-muted); font-size:.85rem; line-height:1.7; }
+.footer-bottom{
+  border-top:1px solid var(--line);
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  padding:20px 0 26px;
+  font-size:.78rem; color:var(--ink-muted);
+}
+
+/* Focus visibility */
+a:focus-visible, button:focus-visible, input:focus-visible{
+  outline:2px solid var(--orange);
+  outline-offset:3px;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media(max-width:1200px){
+  .product-grid{ grid-template-columns:repeat(3, 1fr); gap:20px; }
+}
+@media(max-width:991px){
+  .hero-desc{ margin-inline:auto; }
+  .product-grid{ grid-template-columns:repeat(2, 1fr); }
+  .footer-grid{ grid-template-columns:1fr 1fr; }
+}
+@media(max-width:576px){
+  .header-inner{ padding:8px 10px; border-radius:26px; }
+  .brand-sub{ display:none; }
+  .hero{ min-height:auto; padding:34px 0 60px; }
+  .hero-copy h1{ font-size:2.3rem; }
+  .product-grid{ grid-template-columns:1fr; }
+  .cta-band-inner{ padding:28px; flex-direction:column; align-items:flex-start; }
+  .footer-grid{ grid-template-columns:1fr; }
+  .trust-grid{ justify-content:center; text-align:center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ EXCLUSIVE OFFER BAR ============ -->
+<div class="announce-bar">
+  <div class="announce-track">
+    <span><i class="bi bi-stars"></i> EXCLUSIVE OFFER — FLAT 20% OFF ON YOUR FIRST ORDER</span>
+    <span><i class="bi bi-truck"></i> FREE SHIPPING ABOVE ₹1499</span>
+    <span><i class="bi bi-award"></i> TRUSTED SINCE 2004</span>
+    <span><i class="bi bi-stars"></i> EXCLUSIVE OFFER — FLAT 20% OFF ON YOUR FIRST ORDER</span>
+    <span><i class="bi bi-truck"></i> FREE SHIPPING ABOVE ₹1499</span>
+    <span><i class="bi bi-award"></i> TRUSTED SINCE 2004</span>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner container-xxl">
+
+    <button class="icon-btn d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-label="Open menu">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <a href="#home" class="brand">
+      <span class="brand-mark">GE<span class="accent-dot"></span>TS</span>
+      <span class="brand-sub">western outfit</span>
+    </a>
+
+    <nav class="main-nav d-none d-lg-flex">
+      <a href="#home" class="active-link">Home</a>
+      <a href="#shop" >Shop</a>
+      <a href="#collections">Collections</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn d-none d-md-inline-flex" aria-label="Search">
+        <i class="bi bi-search"></i>
+      </button>
+      <button class="icon-btn d-none d-md-inline-flex" aria-label="Account">
+        <i class="bi bi-person"></i>
+      </button>
+      <button class="icon-btn cart-btn" aria-label="Cart" id="cartBtn">
+        <i class="bi bi-bag"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- ============ MOBILE OFFCANVAS NAV ============ -->
+<div class="offcanvas offcanvas-start mobile-nav" tabindex="-1" id="mobileNav">
+  <div class="offcanvas-header">
+    <span class="brand-mark small">GE<span class="accent-dot">.</span>TS</span>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <a href="#home" data-bs-dismiss="offcanvas">Home</a>
+    <a href="#shop" data-bs-dismiss="offcanvas">Shop</a>
+    <a href="#collections" data-bs-dismiss="offcanvas">Collections</a>
+    <a href="#about" data-bs-dismiss="offcanvas">About</a>
+    <a href="#contact" data-bs-dismiss="offcanvas">Contact</a>
+    <div class="mobile-nav-footer">
+      <p>+91 98271 81830</p>
+      <p>Teliapara, Bilaspur (C.G.)</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+ 
+  <!-- Background video: swap the <source> below for your own compressed .mp4/.webm.
+       poster shows instantly while the video loads; if no source is supplied the
+       gradient defined on .hero-video-wrap is what shows. -->
+  <div class="hero-video-wrap">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto">
+    <source src="image/8386980-uhd_4096_2160_25fps.mp4" type="video/mp4">
+      <!-- <source src="your-video-compressed.webm" type="video/webm"> -->
+    </video>
+  </div>
+  <div class="hero-vignette"></div>
+ 
+  <div class="hero-inner container-xxl">
+    <div class="hero-copy hero-copy-center">
+      <span class="eyebrow"><i class="bi bi-lightning-charge-fill"></i> New Season Drop</span>
+      <h1>Western Fits.<br><span class="text-gradient">Rewritten Bold.</span></h1>
+      <p class="hero-desc" style="color: #000;">Handpicked co-ords, dresses &amp; tops for the woman who dresses on her own terms. Trusted by Bilaspur since 2004 — now online.</p>
+      <div class="cta-group">
+        <a href="#shop" class="btn btn-glow">Shop the Edit <i class="bi bi-arrow-right"></i></a>
+        <a href="#about" class="btn btn-ghost-glass">Our Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ============ TRUST STRIP ============ -->
+<section class="trust-strip">
+  <div class="container-xxl trust-grid">
+    <div class="trust-item"><i class="bi bi-shield-check"></i><span>Quality Checked</span></div>
+    <div class="trust-item"><i class="bi bi-arrow-repeat"></i><span>Easy Returns</span></div>
+    <div class="trust-item"><i class="bi bi-cash-coin"></i><span>Cash on Delivery</span></div>
+    <div class="trust-item"><i class="bi bi-whatsapp"></i><span>WhatsApp Support</span></div>
+  </div>
+</section>
+ 
+
+
+<!-- ============ PRODUCTS ============ -->
+<section class="products" id="shop">
+  <div class="container-xxl">
+    <div class="section-head">
+      <span class="eyebrow"><i class="bi bi-bag-heart"></i> Shop the Edit</span>
+      <h2>Nine Styles, <span class="text-gradient">Zero Compromise</span></h2>
+      <p>A tight, curated drop — hover a card and feel the fabric.</p>
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER / CTA ============ -->
+<section class="cta-band">
+  <div class="container-xxl cta-band-inner">
+    <div>
+      <h3>Get first access to new drops</h3>
+      <p>Join the list — exclusive offers, styled straight to your inbox.</p>
+    </div>
+    <form class="cta-form" onsubmit="return false;">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit" class="btn btn-glow">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" id="contact">
+  <div class="container-xxl footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark">GE<span class="accent-dot">.</span>TS</span>
+      <p>Exclusive Girls Western Outfit — since 2004. Maa Sharda Shopping Complex, Teliapara, Bilaspur (C.G.)</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/gets_girls_western_outfit" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="tel:+919827181830" aria-label="Call"><i class="bi bi-telephone"></i></a>
+        <a href="mailto:junejaneeraj29@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h6>Shop</h6>
+      <a href="#shop">New Arrivals</a>
+      <a href="#shop">Dresses</a>
+      <a href="#shop">Co-ords</a>
+      <a href="#shop">Tops</a>
+    </div>
+    <div class="footer-col">
+      <h6>Support</h6>
+      <a href="#contact">Contact Us</a>
+      <a href="#contact">Track Order</a>
+      <a href="#contact">Returns</a>
+    </div>
+    <div class="footer-col">
+      <h6>Visit</h6>
+      <p class="muted">Mon – Sat: 11 AM – 9 PM<br>Sun: 11 AM – 8 PM</p>
+    </div>
+  </div>
+  <div class="footer-bottom container-xxl">
+    <span>© 2026 GETS. All rights reserved.</span>
+    <span>Crafted with care in Bilaspur, C.G.</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
+<script>
+/* ==========================================================================
+   Product data — 9 curated styles
+   ========================================================================== */
+const PRODUCTS = [
+  {
+    name: "Beautiful Partywear Dress",
+    cat: "Dresses",
+    price: 1899, old: 2399,
+    badge: "Trending",
+    img: "https://pro.carda.in/jsk_data/services/srv_192_1783356849_3.webp"
+  },
+  {
+    name: "Bodycon Polkadot Dress",
+    cat: "Dresses",
+    price: 1499, old: 1899,
+    badge: "New",
+    img: "https://pro.carda.in/jsk_data/services/srv_192_1783356849_2.webp"
+  },
+  {
+    name: "Checks Top",
+    cat: "Tops",
+    price: 899, old: null,
+    badge: "",
+    img: "https://pro.carda.in/jsk_data/services/srv_192_1783356849_1.webp"
+  },
+  {
+    name: "Tube Frill Dress",
+    cat: "Dresses",
+    price: 1699, old: 2099,
+    badge: "Trending",
+    img: "https://pro.carda.in/jsk_data/services/srv_192_1783356849_0.webp"
+  },
+  {
+    name: "Stripes Flair Dress",
+    cat: "Dresses",
+    price: 1599, old: null,
+    badge: "",
+    img: "https://pro.carda.in/jsk_data/services/srv_192_1783186495_0.webp"
+  },
+  {
+    name: "Bodycon Dress",
+    cat: "Dresses",
+    price: 1399, old: 1799,
+    badge: "Sale",
+    img: "https://pro.carda.in/jsk_data/services/srv_192_1783064614_5.webp"
+  },
+  {
+    name: "Beautiful White Dress",
+    cat: "Dresses",
+    price: 1799, old: null,
+    badge: "New",
+    img: "https://pro.carda.in/jsk_data/services/srv_192_1783064614_4.webp"
+  },
+  {
+    name: "Beautiful Flair Dress",
+    cat: "Dresses",
+    price: 1649, old: 1999,
+    badge: "",
+    img: "https://pro.carda.in/jsk_data/services/srv_192_1783064614_3.webp"
+  },
+  {
+    name: "Denim Dress",
+    cat: "Denim",
+    price: 1899, old: null,
+    badge: "Trending",
+    img: "https://pro.carda.in/jsk_data/services/srv_192_1783064614_2.webp"
+  }
+];
+
+/* ==========================================================================
+   Render product grid
+   ========================================================================== */
+const grid = document.getElementById("productGrid");
+
+function currency(n){
+  return "₹" + n.toLocaleString("en-IN");
+}
+
+PRODUCTS.forEach((p, i) => {
+  const card = document.createElement("article");
+  card.className = "product-card";
+  card.innerHTML = `
+    <div class="ripple"></div>
+    <div class="product-media">
+      <img src="${p.img}" alt="${p.name}" loading="lazy">
+      ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ""}
+      <button class="product-wish" aria-label="Add ${p.name} to wishlist"><i class="bi bi-heart"></i></button>
+    </div>
+    <div class="product-info">
+      <span class="product-cat">${p.cat}</span>
+      <h5>${p.name}</h5>
+      <div class="product-price-row">
+        <span>
+          <span class="price">${currency(p.price)}</span>
+          ${p.old ? `<span class="price-old">${currency(p.old)}</span>` : ""}
+        </span>
+        <button class="add-btn" aria-label="Add ${p.name} to bag" data-add>
+          <i class="bi bi-plus-lg"></i>
+        </button>
+      </div>
+    </div>
+  `;
+  grid.appendChild(card);
+});
+
+/* ==========================================================================
+   3D tilt + liquid ripple on product cards
+   ========================================================================== */
+const cards = document.querySelectorAll(".product-card");
+
+cards.forEach(card => {
+  const ripple = card.querySelector(".ripple");
+
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const cx = x / rect.width;
+    const cy = y / rect.height;
+
+    const tiltX = (cy - 0.5) * -10;
+    const tiltY = (cx - 0.5) * 12;
+
+    card.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-6px)`;
+    card.style.setProperty("--rx", `${cx * 100}%`);
+    if (ripple){
+      ripple.style.setProperty("--mx", `${x}px`);
+      ripple.style.setProperty("--my", `${y}px`);
+    }
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "rotateX(0) rotateY(0) translateY(0)";
+  });
+
+  const addBtn = card.querySelector("[data-add]");
+  if (addBtn){
+    addBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      bumpCart();
+      addBtn.animate(
+        [{ transform: "rotate(0)" }, { transform: "rotate(360deg)" }],
+        { duration: 400, easing: "ease" }
+      );
+    });
+  }
+
+  const wishBtn = card.querySelector(".product-wish");
+  if (wishBtn){
+    wishBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      wishBtn.classList.toggle("active");
+      const icon = wishBtn.querySelector("i");
+      icon.className = wishBtn.classList.contains("active") ? "bi bi-heart-fill" : "bi bi-heart";
+    });
+  }
+});
+
+/* ==========================================================================
+   Cart badge
+   ========================================================================== */
+let cartCount = 0;
+const cartBadge = document.getElementById("cartBadge");
+
+function bumpCart(){
+  cartCount += 1;
+  cartBadge.textContent = cartCount;
+  cartBadge.animate(
+    [{ transform: "scale(1)" }, { transform: "scale(1.4)" }, { transform: "scale(1)" }],
+    { duration: 320, easing: "ease-out" }
+  );
+}
+
+/* ==========================================================================
+   Hero background video — pause it for users who prefer reduced motion
+   (poster image still shows, so the hero never goes blank).
+   ========================================================================== */
+const heroVideo = document.querySelector(".hero-video");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (heroVideo && prefersReducedMotion){
+  heroVideo.removeAttribute("autoplay");
+  heroVideo.pause();
+}
+
+/* ==========================================================================
+   Header shrink on scroll
+   ========================================================================== */
+const header = document.getElementById("siteHeader");
+let lastY = 0;
+window.addEventListener("scroll", () => {
+  const y = window.scrollY;
+  header.style.transform = y > lastY && y > 140 ? "translateY(-130%)" : "translateY(0)";
+  header.style.transition = "transform .35s ease";
+  lastY = y;
+});
+</script>
+</body>
+</html>
